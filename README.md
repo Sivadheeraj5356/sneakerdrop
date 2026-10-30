@@ -7,8 +7,8 @@ application.
 
 > **Authorship note:** this project was built with AI assistance (Instinct) under
 > my direction - I set the brief, the design direction and the requirements, and
-> reviewed the implementation. Every technical decision below is described in my
-> own words so I can explain and defend it.
+> reviewed the design preview before publication. The technical decisions below
+> are written up so I can explain and defend them.
 
 ## Features
 
