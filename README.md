@@ -113,7 +113,7 @@ CREATE UNIQUE INDEX waitlist_unique_per_product ON waitlist (sneaker_id, lower(e
 
 ## Deployment
 
-- Live site: _TBD - filled after deploy_
+- Live site: https://sneakerdrop-ashen.vercel.app/ (Vercel, auto-assigned domain)
 - Admin: `/admin` (password in server env)
 
 ## Known limitations
