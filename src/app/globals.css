@@ -80,7 +80,7 @@ img { display: block; max-width: 100%; }
 
 /* ---------- buttons ---------- */
 .btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap;
   font-family: inherit; font-weight: 700; font-size: 14px; letter-spacing: 0.02em;
   padding: 13px 26px; border-radius: 999px; border: 1px solid transparent;
   cursor: pointer; transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
@@ -281,6 +281,9 @@ img { display: block; max-width: 100%; }
 @media (max-width: 600px) {
   .grid, .craft-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
+  .site-header .bar { gap: 10px; }
+  .wordmark { font-size: 15px; letter-spacing: 0.08em; flex-shrink: 0; }
+  .site-header .btn-sm { padding: 8px 14px; font-size: 12.5px; flex-shrink: 0; }
   .hero { padding: 64px 0 48px; }
   .section { padding: 64px 0; }
   .admin-table .hide-sm { display: none; }

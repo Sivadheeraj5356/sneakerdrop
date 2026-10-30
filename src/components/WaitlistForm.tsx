@@ -8,8 +8,28 @@ type State =
   | { status: "ok" }
   | { status: "err"; message: string };
 
+const COPY: Record<string, { heading: string; body: string }> = {
+  in_stock: {
+    heading: "Join the waitlist",
+    body: "In stock now, but numbered pairs never restock. Leave your email and you will hear first about the next drop.",
+  },
+  low_stock: {
+    heading: "Join the waitlist",
+    body: "Low stock and no restocks. Leave your email and you will hear first about the next drop if this pair sells through.",
+  },
+  sold_out: {
+    heading: "Sold out",
+    body: "This pair is gone and never restocks. Leave your email and you will hear first when the next drop opens.",
+  },
+  upcoming: {
+    heading: "Join the waitlist",
+    body: "Not open yet. Leave your email and you will hear first when this pair opens.",
+  },
+};
+
 export default function WaitlistForm({ slug, availability }: { slug: string; availability: string }) {
   const [state, setState] = useState<State>({ status: "idle" });
+  const copy = COPY[availability] ?? COPY.upcoming;
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -50,8 +70,8 @@ export default function WaitlistForm({ slug, availability }: { slug: string; ava
 
   return (
     <div className="waitlist-panel">
-      <h3>{availability === "sold_out" ? "Sold out - join the restock list" : "Join the waitlist"}</h3>
-      <p>Numbered pairs go fast. Leave your email and you will hear first when this pair opens.</p>
+      <h3>{copy.heading}</h3>
+      <p>{copy.body}</p>
       <form onSubmit={onSubmit}>
         <div className="hp-field" aria-hidden="true">
           <label>
